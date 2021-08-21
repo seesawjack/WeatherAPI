@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    background-color: #4a4e61;
+    background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+    
+   
+}
+/*天氣svg*/
+:root {
+    --color_white: rgb(243, 243, 243);
+
+    --color_yellow: #FFD633;
+
+    --color_black: #333;
+
+    --color_blue_start: #19283D;
+
+    --color_blue_end: #1D678F;
+
+    --color_rain: #4DACFF;
+
+    --color_white_cloud: rgb(242, 249, 254);
+
+    --color_grey_cloud: #ccc;
+}
+.sunny {
+    width: 150px;
+    height: 150px;
+    fill: rgba(255, 214, 51, 1);
+    stroke: rgba(255, 214, 51, 0.5);
+    stroke-dasharray: 3px;
+    stroke-width: 15px;
+}
+
+#sun {
+    fill: rgba(255, 214, 51, 1);
+    stroke: rgba(255, 214, 51, 0.5);
+    stroke-dasharray: 3px;
+    stroke-width: 15px;
+}
+
+.cloudy_sunny {
+    width: 150px;
+    height: 150px;
+
+}
+
+.cloudy {
+    width: 150px;
+    height: 150px;
+}
+
+#cloud {
+    fill: rgb(242, 249, 254);
+}
+
+#cloud2 {
+    fill: rgb(225, 241, 252);
+}
+
+.overcast {
+    width: 150px;
+    height: 150px;
+}
+
+#overcast_cloud {
+    fill: rgb(209, 209, 209);
+}
+
+#overcast_cloud2 {
+    fill: rgb(150, 146, 146);
+}
+
+.rainy {
+    width: 150px;
+    height: 150px;
+}
+
+.rainy_thunder{
+    width: 150px;
+    height: 150px;
+}
+
+#rain {
+    fill: rgb(221, 234, 247);
+}
+
+#thunder{
+    fill: rgba(255, 214, 51, 1);
+    stroke:rgba(255, 214, 51, 1);
+    stroke-width: 1;
+
+}
+/*天氣svg結束*/
+.card-group {
+    width: 80%;
+    padding: 70px 0px;
+    height: unset;
+    margin: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.card-group.active .wx,.card-group.active .pop,.card-group.active .temp{
+    opacity: 0.1;
+}
+
+
+.card {
+    margin-bottom: 50px;
+    transition: 2s;
+}
+
+
+
+.topcard {
+    width: 450px;
+    height: 350px;
+    background: linear-gradient(0deg, rgba(0, 24, 69, 1) 8%, rgba(29, 53, 93, 1) 74%, rgba(52, 76, 113, 1) 100%, rgba(123, 146, 173, 1) 100%, rgba(219, 241, 255, 1) 100%);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border-radius: 19px 19px 0px 0px;
+    position: relative;
+    transition: 2s;
+}
+.card.active .wx span{
+    opacity: 0.5;
+
+}
+.cityname {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    width: unset;
+    height: 50px;
+
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.cityname span:last-child{
+    font-size: 13.5px;
+    margin-left: 2px;
+}
+
+.temp {
+    width: 100px;
+    height: 10px;
+
+    color:white;
+    /* background-color: rgb(211, 125, 125); */
+    font-size: 48px;
+    font-family: sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 20px;
+}
+
+.wx {
+    width: 100px;
+    height: 150px;
+    
+    position: absolute;
+    top: calc(80% - 80px);
+    left: 50%;
+}
+
+.pop {
+    width: 110px;
+    height: 70px;
+    
+    color:rgb(204, 204, 204);
+    font-weight: 800;
+    font-family: sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10px;
+}
+
+.botcard {
+    width: 450px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 19px 19px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-around;
+    transition: 2s;
+}
+
+.card:hover .botcard {
+    height: 100px;
+    transition: 2s;
+    box-shadow: 0px 3px 19px -4px rgba(0,0,0,0.75);
+}
+.card:hover .topcard{
+    
+    background-image: url('./素材/星空.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: 2s;
+}
+
+.card:hover .botcard .maxt {
+   opacity: 1;
+   
+}
+.card:hover .botcard .mint {
+   opacity: 1;
+   
+}
+.card:hover .botcard .suggest {
+   opacity: 1;
+   
+}
+
+.maxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+
+    opacity:0;
+    transition: 1s;
+}
+.maxt span:last-child{
+    color: red;
+}
+.mint {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+
+    opacity:0;
+    transition: 1s;
+}
+.mint span:last-child{
+    color: rgb(0, 79, 182);
+}
+.suggest {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+
+    opacity:0;
+    transition: 1s;
+}
+
+/*nav導覽列*/
+nav{
+    width: 100%;
+    height: 30px;
+    background-color: rgba(54, 68, 77, 0.472);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    box-shadow: 6px 0px 9px -1px rgba(0,0,0,0.76);
+    transition: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav:hover{
+  height: 50px;
+}
+
+nav:hover .menu-btn{
+    display: none;
+}
+
+.menu-btn{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+}
+
+.menu-btn .bar{
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+
+nav:hover button{
+    top: 0;
+    opacity: 1;
+    transition-delay: 0.1s;
+    transition-duration: 0.3s;
+
+}
+
+button{
+    background-color: rgba(45, 67, 80, 0.472);
+    border: none;
+    width: 20%;
+    height: 50px;
+    
+    position: relative;
+    bottom:-50px;
+    opacity: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(246, 246, 246);
+}
+
+button:hover{
+    background-color: rgb(93, 134, 141);
+}

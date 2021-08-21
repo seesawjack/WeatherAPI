@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./weather.css">
+    <title>天氣預報</title>
+</head>
+
+<body>
+    <nav>
+        <div class="menu-btn">
+            <div class="bar">▼</div>
+        </div>
+        <button onclick="getWeatherInfo(0)">早上</button>
+        <button onclick="getWeatherInfo(1)">中午</button>
+        <button onclick="getWeatherInfo(2)">晚上</button>
+    </nav>
+    <div class="card-group"></div>
+    <script src="./weather.js"></script>
+</body>
+
+</html>

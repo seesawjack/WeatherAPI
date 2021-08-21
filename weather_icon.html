@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --color_white: rgb(243, 243, 243);
+
+            --color_yellow: #FFD633;
+
+            --color_black: #333;
+
+            --color_blue_start: #19283D;
+
+            --color_blue_end: #1D678F;
+
+            --color_rain: #4DACFF;
+
+            --color_white_cloud: rgb(242, 249, 254);
+
+            --color_grey_cloud: #ccc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sunny {
+            width: 150px;
+            height: 150px;
+            fill: rgba(255, 214, 51, 1);
+            stroke: rgba(255, 214, 51, 0.5);
+            stroke-dasharray: 3px;
+            stroke-width: 15px;
+        }
+
+        #sun {
+            fill: rgba(255, 214, 51, 1);
+            stroke: rgba(255, 214, 51, 0.5);
+            stroke-dasharray: 3px;
+            stroke-width: 15px;
+        }
+
+        .cloudy_sunny {
+            width: 150px;
+            height: 150px;
+
+        }
+
+        .cloudy {
+            width: 150px;
+            height: 150px;
+        }
+
+        #cloud {
+            fill: rgb(242, 249, 254);
+        }
+
+        #cloud2 {
+            fill: rgb(225, 241, 252);
+        }
+
+        .overcast {
+            width: 150px;
+            height: 150px;
+        }
+
+        #overcast_cloud {
+            fill: rgb(209, 209, 209);
+        }
+
+        #overcast_cloud2 {
+            fill: rgb(150, 146, 146);
+        }
+
+        .rainy {
+            width: 150px;
+            height: 150px;
+        }
+
+        .rainy_thunder{
+            width: 150px;
+            height: 150px;
+        }
+
+        #rain {
+            fill: rgb(221, 234, 247);
+        }
+
+        #thunder{
+            fill: rgba(255, 214, 51, 1);
+            stroke:rgba(255, 214, 51, 1);
+            stroke-width: 1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <svg class="sunny" viewbox="15 15 70 70">
+        <circle id="sun" cx="50" cy="50" r="20">
+            <animateTransform dur="5s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,50,50"
+                to="360,50,50" />
+        </circle>
+    </svg>
+
+    <svg class="cloudy_sunny" viewbox="0 -5 100 100">
+        <circle id="sun" cx="60" cy="40" r="15">
+            <animateTransform dur="5s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,60,40"
+                to="360,60,40" />
+        </circle>
+        <g id="cloud">
+            <circle cx="32" cy="35" r="15"></circle>
+            <circle cx="50" cy="40" r="14"></circle>
+            <rect width="70" height="30" x="5" y="35" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="-5,10;10,10;-5,10" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+    </svg>
+
+    <svg class="cloudy" viewbox="0 0 100 100">
+        <g id="cloud">
+            <circle cx="37" cy="40" r="15"></circle>
+            <circle cx="55" cy="45" r="14"></circle>
+            <rect width="70" height="30" x="10" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="10,0;-5,0;10,0" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <g id="cloud2">
+            <circle cx="32" cy="35" r="13"></circle>
+            <circle cx="50" cy="40" r="12"></circle>
+            <rect width="70" height="30" x="5" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="-5,20;10,20;-5,20" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <animateTransform attributeName="transform" dur="0.1s" type="scale" values="1.5"/>
+    </svg>
+
+    <svg class="overcast" viewbox="0 0 100 100">
+        <g id="overcast_cloud">
+            <circle cx="37" cy="40" r="15"></circle>
+            <circle cx="55" cy="45" r="14"></circle>
+            <rect width="70" height="30" x="10" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="10,0;-5,0;10,0" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <g id="overcast_cloud2">
+            <circle cx="32" cy="35" r="13"></circle>
+            <circle cx="50" cy="40" r="12"></circle>
+            <rect width="70" height="30" x="5" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="-5,20;10,20;-5,20" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+    </svg>
+
+    <svg class="rainy" viewbox="0 10 100 100">
+        <g id="rain">
+            <rect width="2" height="7" x="45" y="60" rx="1">
+                <animateTransform dur="1.5s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,10,50;30,-150,-20" />
+            </rect>
+            <rect width="2" height="7" x="60" y="60" rx="1">
+                <animateTransform dur="1.8s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,50;30,-150,-20" />
+            </rect>
+            <rect width="2" height="7" x="75" y="55" rx="1">
+                <animateTransform dur="1.3s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,60;30,-150,-20" />
+            </rect>
+            <rect width="2" height="7" x="65" y="45" rx="1">
+                <animateTransform dur="1.2s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,60;30,-150,-20" />
+            </rect>
+            <animateTransform link attributeName="transform" type="translate" values="-5,-5;10,0;-5,-5" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <g id="overcast_cloud">
+            <circle cx="37" cy="40" r="15"></circle>
+            <circle cx="55" cy="45" r="14"></circle>
+            <rect width="70" height="30" x="10" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="10,0;-5,0;10,0" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <g id="overcast_cloud2">
+            <circle cx="32" cy="35" r="13"></circle>
+            <circle cx="50" cy="40" r="12"></circle>
+            <rect width="70" height="30" x="5" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="-5,15;10,15;-5,15" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+    </svg>
+    
+    <svg class="rainy_thunder" viewbox="0 10 100 100">
+        <g id="rain">
+            <rect width="2" height="7" x="45" y="60" rx="1">
+                <animateTransform dur="0.6s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,10,50;30,-150,-20" />
+            </rect>
+            <rect width="2" height="7" x="60" y="60" rx="1">
+                <animateTransform dur="0.8s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,50;30,-150,-20" />
+            </rect>
+            <rect width="2" height="7" x="75" y="55" rx="1">
+                <animateTransform dur="0.7s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,60;30,-150,-20" />
+            </rect>
+            <rect width="2" height="7" x="65" y="45" rx="1">
+                <animateTransform dur="0.5s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,60;30,-150,-20" />
+            </rect>
+            <animateTransform link attributeName="transform" type="translate" values="-5,-5;10,0;-5,-5" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <g>
+            <polyline id="thunder" points="50,38 46,50 52,50 50,60 56,47 50,47 50,38">
+                <animateTransform dur="2.5s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="30,50,60;30,-150,-20" />
+            </polyline>
+            <polyline id="thunder" points="50,38 46,50 52,50 50,60 56,47 50,47 50,38">
+                <animateTransform dur="3s" attributeName="transform" repeatCount="indefinite" type="rotate"
+                    values="10,60,100;-100,200,10" />
+            </polyline>
+        </g>
+        <g id="overcast_cloud">
+            <circle cx="37" cy="40" r="15"></circle>
+            <circle cx="55" cy="45" r="14"></circle>
+            <rect width="70" height="30" x="10" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="10,0;-5,0;10,0" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+        <g id="overcast_cloud2">
+            <circle cx="32" cy="35" r="13"></circle>
+            <circle cx="50" cy="40" r="12"></circle>
+            <rect width="70" height="30" x="5" y="40" rx="15"></rect>
+            <animateTransform attributeName="transform" type="translate" values="-5,15;10,15;-5,15" dur="2s"
+                repeatCount="indefinite" />
+        </g>
+    </svg>
+
+</body>
+
+</html>
