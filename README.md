@@ -4,3 +4,4 @@
 
 ## 使用技術：
 - HTML/CSS/JavaScript
+- 外部 API：[中央氣象局氣象資料開放平台](https://opendata.cwb.gov.tw/index)
